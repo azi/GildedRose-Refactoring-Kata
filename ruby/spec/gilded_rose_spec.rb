@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 # NOTE uncomment one of the lines to run tests for proper GildedRose class
 require File.join(File.dirname(__FILE__) + '/..', 'gilded_rose')
