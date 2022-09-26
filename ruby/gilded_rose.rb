@@ -36,16 +36,16 @@ def calc_brie(item)
 end
 
 def calc_concer(item)
+  item.sell_in -= 1
   offset = case
-           when item.sell_in < 11 && item.sell_in >= 6 then 2
-           when item.sell_in < 6  && item.sell_in > 0  then 3
-           when item.sell_in == 0                      then -1 * item.quality
-           else 1
+           when item.sell_in >= 10 then 1
+           when item.sell_in >=  5 then 2
+           when item.sell_in >=  0 then 3
+           when item.sell_in <   0 then -1 * item.quality
            end
 
   item.quality += offset if item.quality < 50
   item.quality = 50      if item.quality >= 50
-  item.sell_in -= 1
 end
 
 def calc_default(item)
